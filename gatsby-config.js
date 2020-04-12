@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/juninmd ",
   /* Your site config here */
   siteMetadata: {
     title: `Antonio Carlos`,
