@@ -1,11 +1,11 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8ec719ad-c2f8-4529-b97d-e7561a9eaf33/deploy-status)](https://app.netlify.com/sites/delog-w3layouts/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9fc803a-33f9-410c-b2ea-a4c06e2831a4/deploy-status)](https://app.netlify.com/sites/hardcore-edison-23aa44/deploys)
 
 # Delog - Blog for Developer and Designer
 This simple website built with GatsbyJS and Netlify CMS. Deploys on netlify with single click. This Starter is sponsered by [W3Layouts](https://w3layouts.com).
 
 [![Delog - Gatsby Starter Demo](https://w3layouts.com/wp-content/uploads/2020/03/gatsby-starter.jpg)](https://delog-w3layouts.netlify.com/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/W3Layouts/gatsby-starter-delog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/juninmd/juninmd)
 
 * Once you hit "Deploy to Netlify"
 * Connect Github
