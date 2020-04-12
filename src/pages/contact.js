@@ -18,9 +18,9 @@ const ContactPage = ({
         <div className="post-thumbnail" style={{ backgroundImage: `url('/assets/contato.jpg')`, marginBottom: 0 }}>
           <h1 className="post-title">Contato</h1>
           <div className="navigation">
-            <a href="http://github.com/juninmd" target="_blank">Github</a>
-            <a href="http://facebook.com/juninmd" target="_blank">Facebook</a>
-            <a href="http://twitter.com/junin_md" target="_blank">Twitter</a>
+            <a href="http://github.com/juninmd" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="http://facebook.com/juninmd" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="http://twitter.com/junin_md" target="_blank" rel="noopener noreferrer">Twitter</a>
           </div>
         </div>
       </div>
