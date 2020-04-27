@@ -1,4 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9fc803a-33f9-410c-b2ea-a4c06e2831a4/deploy-status)](https://app.netlify.com/sites/hardcore-edison-23aa44/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9fc803a-33f9-410c-b2ea-a4c06e2831a4/deploy-status)](https://app.netlify.com/sites/juninmd/deploys)
+
+<https://juninmd.netlify.app/>
 
 # Delog - Blog for Developer and Designer
 This simple website built with GatsbyJS and Netlify CMS. Deploys on netlify with single click. This Starter is sponsered by [W3Layouts](https://w3layouts.com).
