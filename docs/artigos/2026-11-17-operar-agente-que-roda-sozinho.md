@@ -6,6 +6,7 @@ categoria: artigos
 tags: [ia, agentes, operacao, evo-agent, engenharia]
 status: publicado
 ia: true
+autoria: ia
 autor: Antonio
 fontes:
   - https://github.com/juninmd/evo-agent/blob/main/docs/OPERATIONS.md

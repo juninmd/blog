@@ -1,5 +1,7 @@
 # Roteiro do vídeo: Cinco lições de operação que meu agente de notícias me ensinou
 
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+
 Duração estimada: 4 minutos. Narração em off sobre motion. Números entre colchetes remetem às cenas do storyboard.
 
 [1] Meu agente de notícias publica sozinho, de hora em hora. Escrever é a parte fácil. Hoje é sobre o que acontece quando algo quebra às três da manhã.

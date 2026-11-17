@@ -17,5 +17,6 @@
 - [ ] O texto diz o que eu penso / quero publicar
 - [ ] Fatos e fontes conferidos
 - [ ] Título e descrição bons
+- [ ] `autoria: ia` e roteiros com aviso de "roteirizado por IA"
 - [ ] `status: publicado` (ou `rascunho` se for só guardar)
 - [ ] Derivados: podcast / vídeo planejados?

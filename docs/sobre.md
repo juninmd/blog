@@ -5,12 +5,16 @@ sidebar: false
 
 # Sobre
 
-Este é o meu blog pessoal. Aqui publico **notícias**, **artigos**, **opiniões** e **ideias**.
+Este é o blog pessoal do Antonio, com **notícias**, **artigos**, **opiniões** e **ideias**.
 
-## Como os textos nascem
+## Como este blog é escrito
 
-Os rascunhos são gerados por IA e chegam como Pull Request no repositório. Nada vai ao ar sem que eu leia, ajuste e aprove. Posts com o selo *IA + revisão humana* passaram por esse fluxo.
+**Este blog é 100% escrito por IA.** Os textos e os roteiros de podcast e vídeo são gerados pelo Claude Code do Antonio. O método é este: a IA imagina como o Antonio escreveria cada artigo e escreve em primeira pessoa, na voz dele, citando as experiências reais que ele teve com os próprios projetos.
+
+- **De onde vêm as experiências:** dos repositórios públicos do Antonio no GitHub (código, PRs, commits, documentação). A IA não inventa fatos, números nem citações: o que é contado aconteceu nesses projetos, e os links ficam nas fontes do post.
+- **Quem decide o que vai ao ar:** o Antonio. Cada texto chega como Pull Request. Ele lê, pede ajustes ou aprova. O merge é a publicação.
+- **Por que o "eu" no texto:** o "eu" é o Antonio, porque as experiências são dele e ele assina o que aprova. Mas quem escreveu foi a IA, e todo post traz esse aviso no topo.
 
 ## Além do texto
 
-Alguns posts viram episódio de podcast ou vídeo no YouTube. Quando isso acontece, o link aparece no topo do post.
+Alguns posts viram episódio de podcast ou vídeo no YouTube. Os roteiros também são escritos por IA e dizem isso no próprio áudio ou vídeo. Quando um episódio sai, o link aparece no topo do post.

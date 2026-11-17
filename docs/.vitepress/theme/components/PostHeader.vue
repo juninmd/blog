@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { categorias } from '../../categorias'
+import AvisoIA from './AvisoIA.vue'
 
 const { frontmatter } = useData()
 const ehPost = computed(() => Boolean(frontmatter.value.categoria && frontmatter.value.date))
@@ -20,7 +21,7 @@ const video = computed(() => frontmatter.value.derivados?.video?.url)
     <span class="ph-meta">
       <a v-if="cat" :href="withBase(`/${frontmatter.categoria}/`)">{{ cat.titulo }}</a>
       <time :datetime="dia">{{ dataFmt }}</time>
-      <span v-if="frontmatter.ia" class="ph-ia" title="Texto gerado com IA e revisado pelo autor">IA + revisão humana</span>
+      <span class="ph-ia" title="Texto escrito por IA e aprovado pelo Antonio">Escrito por IA</span>
     </span>
     <span v-if="podcast || video" class="ph-derivados">
       <a v-if="podcast" :href="podcast" target="_blank" rel="noopener">🎧 Ouvir no podcast</a>
@@ -28,5 +29,6 @@ const video = computed(() => frontmatter.value.derivados?.video?.url)
     </span>
     <h1 class="ph-titulo">{{ frontmatter.title }}</h1>
     <p v-if="frontmatter.description" class="ph-resumo">{{ frontmatter.description }}</p>
+    <AvisoIA compacto />
   </header>
 </template>

@@ -41,3 +41,11 @@ body { background: var(--sd-ink); color: var(--sd-paper); }
 }
 .ph-titulo { flex-basis: 100%; margin: 8px 0 0; font: 900 clamp(36px, 6vw, 56px)/1 var(--sd-display); text-transform: uppercase; }
 .ph-resumo { flex-basis: 100%; margin: 0; color: var(--sd-fog); font-size: 1.15rem; font-style: italic; }
+
+/* Aviso de autoria por IA */
+.aviso-ia {
+  margin: 16px 0 8px; padding: 12px 16px; border: 1px solid var(--sd-line); border-left: 3px solid var(--vp-c-brand-1);
+  border-radius: 12px; font-size: 14px; line-height: 1.6; color: var(--vp-c-text-2);
+}
+.aviso-ia strong { color: var(--vp-c-text-1); }
+.aviso-ia a { margin-left: 4px; white-space: nowrap; color: var(--vp-c-brand-1); text-decoration: underline; }
