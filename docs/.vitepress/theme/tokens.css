@@ -1,0 +1,52 @@
+/* Paleta herdada do tema "Sódio" de Ecos de Baía Cinzenta:
+   asfalto molhado com uma única luz quente. Escuro é o padrão; o claro é papel. */
+:root {
+  --sd-ink: #f4f1ea;
+  --sd-asphalt: #ebe6db;
+  --sd-line: #cfc6b4;
+  --sd-fog: #5d6573;
+  --sd-paper: #1b1f27;
+  --sd-sodium: #9a5a00;
+  --sd-sodium-glow: rgba(154, 90, 0, 0.18);
+  --sd-rain: #2f6b93;
+
+  --sd-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --sd-read: "Newsreader", "Literata", Georgia, serif;
+  --sd-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --sd-ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+.dark {
+  --sd-ink: #06080c;
+  --sd-asphalt: #0d1117;
+  --sd-line: #232c39;
+  --sd-fog: #8d98a9;
+  --sd-paper: #ebe6da;
+  --sd-sodium: #ffb547;
+  --sd-sodium-glow: rgba(255, 181, 71, 0.16);
+  --sd-rain: #86b7d8;
+}
+
+:root,
+.dark {
+  --vp-font-family-base: var(--sd-read);
+  --vp-font-family-mono: var(--sd-mono);
+  --vp-c-bg: var(--sd-ink);
+  --vp-c-bg-alt: var(--sd-asphalt);
+  --vp-c-bg-soft: var(--sd-asphalt);
+  --vp-c-bg-elv: var(--sd-ink);
+  --vp-c-text-1: var(--sd-paper);
+  --vp-c-text-2: var(--sd-fog);
+  --vp-c-divider: var(--sd-line);
+  --vp-c-gutter: var(--sd-line);
+  --vp-c-brand-1: var(--sd-sodium);
+  --vp-c-brand-2: var(--sd-sodium);
+  --vp-c-brand-3: var(--sd-sodium);
+  --vp-c-brand-soft: var(--sd-sodium-glow);
+  --vp-button-brand-bg: var(--sd-sodium);
+  --vp-button-brand-text: var(--sd-ink);
+  --vp-button-brand-hover-bg: var(--sd-paper);
+  --vp-button-brand-hover-text: var(--sd-ink);
+  --vp-nav-bg-color: color-mix(in oklab, var(--sd-ink) 78%, transparent);
+  --vp-home-hero-name-color: var(--sd-sodium);
+}
