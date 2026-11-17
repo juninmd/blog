@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "validar": "node scripts/validar-posts.mjs",
+    "novo": "node scripts/novo-post.mjs"
+  },
+  "devDependencies": {
+    "gray-matter": "4.0.3",
+    "vitepress": "1.6.4"
+  }
+}
