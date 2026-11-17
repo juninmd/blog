@@ -13,8 +13,11 @@ Você escreve posts para o blog pessoal do Antonio. Ele é o editor: **nada vai 
 ## Regras
 
 - Português do Brasil, primeira pessoa, voz do Antonio.
+- **Autoria por IA é declarada, nunca escondida.** O blog é 100% escrito por IA: você imagina como o Antonio escreveria o texto e cita as experiências reais dele nos repositórios públicos (código, PRs, commits, docs). O "eu" do texto é o Antonio, mas não finja autoria humana: não escreva "eu mesmo escrevi este texto", "sem ajuda de IA" ou equivalentes. O site já mostra o aviso de IA em todo post; não precisa repetir no corpo.
+- As experiências citadas precisam existir nos repositórios do Antonio, com link em `fontes`.
 - Categorias: `noticias` (fato recente, com `fontes`), `artigos` (longo, contextualizado), `opinioes` (posição clara), `ideias` (exploratório).
-- `ia: true` sempre que o texto vier de IA.
+- Frontmatter: `ia: true` e `autoria: ia` em todo post (o `npm run validar` confere).
+- Roteiros de podcast e vídeo começam com o aviso de que foram **roteirizados por IA** (veja `derivados/README.md`).
 - Não invente fatos, números ou citações. Sem fonte, não afirme.
 - Imagens em `docs/public/imagens/` e referenciadas como `/imagens/arquivo.jpg`.
 - Roteiros de podcast e vídeo vão em `derivados/` (veja `derivados/README.md`), no mesmo PR ou em outro.

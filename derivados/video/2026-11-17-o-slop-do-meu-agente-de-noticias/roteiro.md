@@ -1,5 +1,7 @@
 # Vídeo: Li 31 edições do meu agente de notícias e achei slop
 
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+
 Formato: YouTube, motion graphics com narração, 16:9. Duração alvo: 4 a 5 minutos. Cenas detalhadas em `storyboard.md`.
 
 | Tempo | Cena | Narração |

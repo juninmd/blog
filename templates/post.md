@@ -6,6 +6,7 @@ categoria: artigos # noticias | artigos | opinioes | ideias
 tags: []
 status: publicado # rascunho = fica no repositório, mas não vai ao ar
 ia: true # true quando o texto foi gerado com IA
+autoria: ia # obrigatório: o blog é 100% escrito por IA (em nome do Antonio)
 autor: Antonio
 fontes: [] # links usados (obrigatório em noticias)
 # capa: /imagens/slug.jpg

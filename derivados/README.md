@@ -24,4 +24,13 @@ derivados:
     url: https://youtube.com/watch?v=...
 ```
 
+## Aviso de IA (obrigatório)
+
+Todo roteiro é escrito por IA e precisa dizer isso para quem ouve ou assiste. Logo após o título, inclua:
+
+- **Podcast:** `> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e eu revisei antes de ir ao ar."`
+- **Vídeo:** `> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."`
+
+O `npm run validar` avisa quando um roteiro ligado a um post não tem a frase "roteirizado por IA".
+
 Quando `url` existe, o post mostra o link "Ouvir no podcast" ou "Assistir no YouTube" no topo. A geração de áudio e vídeo ainda não está implementada.

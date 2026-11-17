@@ -6,6 +6,7 @@ categoria: artigos
 tags: [ia, agentes, jornalismo-automatizado, evo-agent]
 status: publicado
 ia: true
+autoria: ia
 autor: Antonio
 fontes:
   - https://github.com/juninmd/evo-agent/blob/main/docs/EDITORIAL-REVIEW.md
