@@ -40,7 +40,8 @@ for (const categoria of categorias) {
       const d = fm.derivados?.[tipo]
       if (d && !statusDerivado.includes(d.status)) erro(`derivados.${tipo}.status inválido`)
       if (d?.status === 'publicado' && !d.url) erro(`derivados.${tipo} publicado sem "url"`)
-      if (d?.roteiro && existsSync(d.roteiro) && !avisoIA.test(readFileSync(d.roteiro, 'utf8')))
+      if (d?.roteiro && !existsSync(d.roteiro)) erro(`derivados.${tipo}.roteiro aponta para arquivo inexistente: ${d.roteiro}`)
+      else if (d?.roteiro && !avisoIA.test(readFileSync(d.roteiro, 'utf8')))
         avisos.push(`${d.roteiro}: roteiro sem aviso de que foi "roteirizado por IA"`)
     }
   }
