@@ -10,7 +10,7 @@ on:
 
 concurrency:
   group: pages-${{ github.event.pull_request.number || 'deploy' }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
