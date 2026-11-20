@@ -19,7 +19,14 @@ for (const categoria of categorias) {
     total++
     const caminho = `docs/${categoria}/${arquivo}`
     const erro = (msg) => erros.push(`${caminho}: ${msg}`)
-    const { data: fm, content } = matter(readFileSync(caminho, 'utf8'))
+    let fm, content
+    try {
+      ;({ data: fm, content } = matter(readFileSync(caminho, 'utf8')))
+    } catch (e) {
+      // YAML quebrado num post não pode esconder os erros dos outros nem sair sem dizer qual arquivo.
+      erro(`frontmatter YAML inválido: ${String(e.reason ?? e.message).split('\n')[0]}${e.mark ? ` (linha ${e.mark.line + 1})` : ''}`)
+      continue
+    }
     const data = fm.date instanceof Date ? fm.date.toISOString().slice(0, 10) : String(fm.date ?? '')
 
     if (!nomeValido.test(arquivo)) erro('nome deve ser AAAA-MM-DD-slug.md')
