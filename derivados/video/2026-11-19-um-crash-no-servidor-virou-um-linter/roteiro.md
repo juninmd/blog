@@ -1,6 +1,6 @@
 # Vídeo: Um crash no meu servidor de CS 1.6 virou um linter
 
-> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por outro agente de IA."
 
 Formato YouTube com motion graphics, narração do Antonio. Duração estimada: 6 minutos. Cenas descritas em storyboard.md.
 

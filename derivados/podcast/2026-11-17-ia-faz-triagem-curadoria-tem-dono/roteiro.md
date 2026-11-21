@@ -20,7 +20,7 @@ Chamar triagem de curadoria cria uma promessa. Aí o texto sai ruim e eu coloco 
 
 **[Bloco 4: minha posição]**
 
-Não sou do time "IA não deve escrever nada", nem do time "revisão humana é gargalo". A IA pode fazer quase tudo. A última decisão precisa ter um nome. No blog, é assim: o agente escreve, abre um Pull Request, eu leio e o merge é a publicação. O merge é a minha assinatura. Isso tem custo: o blog nunca vai sair quatro vezes por dia. Acho justo.
+Não sou do time "IA não deve escrever nada", nem do time "revisão humana é gargalo". A IA pode fazer quase tudo. A última decisão precisa ter um nome. No blog, é assim: um agente escreve, abre um Pull Request, outro agente de IA revisa e o merge é a publicação. É 100% IA, até na revisão, e o blog diz isso no topo de cada post.
 
 **[Bloco 5: o que vou mudar]**
 
@@ -28,4 +28,4 @@ Três coisas: trocar "curadoria" por "triagem" na descrição do fast-news, cria
 
 **[Fechamento, trilha sobe]**
 
-Todo post do blog tem um selo "IA mais revisão humana". Se um dia eu der merge sem ler, o selo vira mentira. O link do texto está na descrição. Até a próxima.
+Todo post do blog tem um aviso dizendo que foi escrito e revisado por IA. Se esse aviso um dia mentir, a confiança vai embora. O link do texto está na descrição. Até a próxima.

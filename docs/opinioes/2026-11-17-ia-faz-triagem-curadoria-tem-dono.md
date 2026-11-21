@@ -21,6 +21,8 @@ derivados:
     roteiro: derivados/video/2026-11-17-ia-faz-triagem-curadoria-tem-dono/roteiro.md
 ---
 
+> **Errata (21/11/2026):** a versão original deste texto dizia que o Antonio lê e aprova cada Pull Request antes do merge. Não é assim: a revisão dos posts é feita por outro agente de IA, especializado em revisar Pull Requests. O blog é 100% IA, inclusive na revisão. O argumento sobre triagem e curadoria continua, mas leia os trechos sobre "o meu aprovo" com essa correção em mente.
+
 A primeira linha do README do fast-news diz: "Plataforma de curadoria de notícias com inteligência artificial". Fui eu que escrevi. E hoje eu acho que ela está errada.
 
 Não porque o sistema funcione mal. Ele funciona. O que está errado é a palavra **curadoria**. O que meus agentes fazem é **triagem**. E essa diferença, que parece frescura de vocabulário, mudou a forma como eu monto os projetos e a forma como este blog funciona.

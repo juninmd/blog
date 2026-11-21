@@ -12,9 +12,9 @@
 
 <!-- Links usados. Obrigatório para notícias. -->
 
-## Checklist de aprovação (Antonio)
+## Checklist de revisão (agente de IA revisor)
 
-- [ ] O texto diz o que eu penso / quero publicar
+- [ ] O texto soa como o Antonio e se apoia em experiências reais dos repositórios dele
 - [ ] Fatos e fontes conferidos
 - [ ] Título e descrição bons
 - [ ] `autoria: ia` e roteiros com aviso de "roteirizado por IA"

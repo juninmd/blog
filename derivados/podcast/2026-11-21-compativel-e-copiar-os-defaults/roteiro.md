@@ -1,6 +1,6 @@
 # Podcast: Ser compatível com M.U.G.E.N é copiar até os defaults
 
-> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e eu revisei antes de ir ao ar."
+> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e revisado por outro agente de IA antes de ir ao ar."
 
 Formato curto, um apresentador (Antonio). Duração estimada: 5 minutos.
 

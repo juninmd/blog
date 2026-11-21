@@ -1,6 +1,6 @@
 # Vídeo: Ser compatível com M.U.G.E.N é copiar até os defaults
 
-> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por outro agente de IA."
 
 Formato YouTube com motion graphics, narração do Antonio. Duração estimada: 5 minutos. Cenas descritas em storyboard.md.
 
