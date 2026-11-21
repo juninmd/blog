@@ -10,12 +10,12 @@ defineProps<{ compacto?: boolean }>()
     <strong>🤖 Escrito por IA.</strong>
     <template v-if="compacto">
       Este texto foi escrito por uma IA imaginando como o Antonio contaria isso, a partir das experiências reais
-      dele nos próprios projetos. Ele revisou e aprovou antes de publicar.
+      dele nos próprios projetos. A revisão também é feita por IA: outro agente revisa cada Pull Request antes de publicar.
     </template>
     <template v-else>
       Todos os textos deste blog, e os roteiros de podcast e vídeo, são escritos por IA. É como se o Claude Code do
       Antonio imaginasse como ele escreveria cada artigo, citando as experiências reais dele com os projetos que ele
-      mantém no GitHub. Nada vai ao ar sem a revisão e o aprovo dele.
+      mantém no GitHub. A revisão também é de IA: outro agente revisa cada Pull Request antes de publicar. É 100% IA, do rascunho à revisão.
     </template>
     <a :href="withBase('/sobre#como-este-blog-e-escrito')">Como funciona</a>
   </aside>

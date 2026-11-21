@@ -1,6 +1,6 @@
 # Roteiro do podcast: Cinco lições de operação que meu agente de notícias me ensinou
 
-> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e eu revisei antes de ir ao ar."
+> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e revisado por outro agente de IA antes de ir ao ar."
 
 Duração estimada: 5 a 6 minutos. Tom de conversa, uma voz.
 

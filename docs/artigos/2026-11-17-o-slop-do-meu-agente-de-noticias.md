@@ -97,7 +97,7 @@ Três ideias que eu levo para qualquer agente que escreve:
 2. **Cota gera enchimento.** Toda regra de "no mínimo N" vira incentivo para o modelo inventar relevância. Se a cota existe, precisa de um filtro de utilidade junto.
 3. **Valide em código o que pode ser validado em código.** Número no título que não está no corpo é uma checagem de poucas linhas. Não precisa de outro LLM para isso.
 
-E tem uma ironia que não dá para ignorar: este texto também foi escrito com IA. A diferença é que aqui nada vai ao ar sem eu ler e aprovar o Pull Request. Depois de ver o que um agente faz sem revisão, eu prefiro assim.
+E tem uma ironia que não dá para ignorar: este texto também foi escrito com IA. A diferença é que aqui nada vai ao ar sem passar por revisão: outro agente de IA lê e aprova o Pull Request antes do merge. Depois de ver o que um agente faz sem revisão nenhuma, eu prefiro assim.
 
 ## Fontes
 

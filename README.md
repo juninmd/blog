@@ -17,11 +17,11 @@ A arquitetura e o tema (paleta "Sódio": asfalto escuro com uma luz quente) vêm
 
 ## 🔁 Como os posts nascem
 
-Os textos são escritos por IA, mas **só vão ao ar com o meu aprovo**:
+Os textos são escritos **e revisados** por IA. Eu não reviso nem aprovo post a post:
 
 1. Um agente de IA cria `docs/<categoria>/AAAA-MM-DD-slug.md` numa branch e abre um **Pull Request** (regras em [AGENTS.md](AGENTS.md)).
 2. O CI valida o frontmatter e faz o build do site.
-3. Eu reviso, peço ajustes ou aprovo.
+3. Um agente de IA de revisão de Pull Requests revisa, pede ajustes ou aprova.
 4. **Merge na `main` = publicação.** O GitHub Actions faz o deploy no Pages.
 
 Quer guardar um post na `main` sem publicar? Use `status: rascunho` no frontmatter: ele fica no repositório e fora do site.

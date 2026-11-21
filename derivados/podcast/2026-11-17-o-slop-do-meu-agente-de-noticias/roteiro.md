@@ -1,6 +1,6 @@
 # Podcast: Li 31 edições do meu agente de notícias e achei slop
 
-> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e eu revisei antes de ir ao ar."
+> **Aviso de IA (ler na abertura):** "Este episódio foi roteirizado por IA, a partir das minhas experiências reais com meus projetos, e revisado por outro agente de IA antes de ir ao ar."
 
 Formato curto, um apresentador (Antonio). Duração estimada: 5 a 6 minutos.
 

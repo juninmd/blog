@@ -1,6 +1,6 @@
 # Roteiro do vídeo: Cinco lições de operação que meu agente de notícias me ensinou
 
-> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por outro agente de IA."
 
 Duração estimada: 4 minutos. Narração em off sobre motion. Números entre colchetes remetem às cenas do storyboard.
 

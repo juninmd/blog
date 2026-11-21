@@ -21,7 +21,7 @@ const video = computed(() => frontmatter.value.derivados?.video?.url)
     <span class="ph-meta">
       <a v-if="cat" :href="withBase(`/${frontmatter.categoria}/`)">{{ cat.titulo }}</a>
       <time :datetime="dia">{{ dataFmt }}</time>
-      <span class="ph-ia" title="Texto escrito por IA e aprovado pelo Antonio">Escrito por IA</span>
+      <span class="ph-ia" title="Texto escrito e revisado por IA">Escrito por IA</span>
     </span>
     <span v-if="podcast || video" class="ph-derivados">
       <a v-if="podcast" :href="podcast" target="_blank" rel="noopener">🎧 Ouvir no podcast</a>

@@ -11,6 +11,6 @@ Paleta do blog ("Sódio"): fundo asfalto escuro, destaque em âmbar quente. Tipo
 7. **A posição.** O loop para. Texto em tela cheia: "A última decisão tem nome."
 8. **O fluxo do blog.** Diagrama: agente → Pull Request → olho (leitura) → botão "Merge" → site. O botão Merge vira uma assinatura.
 9. **O que muda.** Três itens entram com check: nome honesto, errata, revisão onde há opinião.
-10. **Selo.** Selo "IA + revisão humana" no topo de um post; um cursor tenta clicar Merge sem rolar a página e o selo racha. Fecha com logo e URL do blog.
+10. **Selo.** Aviso "Escrito e revisado por IA" no topo de um post; um segundo agente marca o PR como revisado e o merge publica. Fecha com logo e URL do blog.
 
 Assets: ícones genéricos (sem marcas), trilha lo-fi, captura desfocada do README do fast-news só como textura.

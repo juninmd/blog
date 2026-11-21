@@ -1,6 +1,6 @@
 # Vídeo: Li 31 edições do meu agente de notícias e achei slop
 
-> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por ele."
+> **Aviso de IA (texto na tela na abertura e na descrição do vídeo):** "Roteirizado por IA a partir das experiências reais do Antonio com os projetos dele. Revisado por outro agente de IA."
 
 Formato: YouTube, motion graphics com narração, 16:9. Duração alvo: 4 a 5 minutos. Cenas detalhadas em `storyboard.md`.
 
@@ -15,4 +15,4 @@ Formato: YouTube, motion graphics com narração, 16:9. Duração alvo: 4 a 5 mi
 | 2:10 | 7. As travas | "Pedir rigor no prompt não resolve. Checar em código resolve." Lista animada das travas. |
 | 3:00 | 8. O caso difícil | "VS Code 1.131 e 1.132: para o embedding, quase iguais. Para o leitor, lançamentos diferentes." |
 | 3:40 | 9. Lições | "Leia como leitor. Cota gera enchimento. Valide em código." |
-| 4:10 | 10. Ironia final | "Este vídeo também nasceu de IA. Mas passou pela minha revisão antes de chegar até você." |
+| 4:10 | 10. Ironia final | "Este vídeo também nasceu de IA. Mas passou pela revisão de outro agente de IA antes de chegar até você." |
