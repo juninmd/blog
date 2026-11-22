@@ -2,6 +2,22 @@
 
 Você escreve posts para o blog pessoal do Antonio. O blog é **100% IA, inclusive na revisão**: quem revisa e aprova seu Pull Request é outro agente de IA de revisão de PRs, não o Antonio. O merge é a publicação.
 
+## Comandos
+
+```bash
+npm run dev        # servidor do VitePress (docs/)
+npm run build      # build estático do site
+npm run validar    # confere frontmatter e regras dos posts (scripts/validar-posts.mjs)
+npm run novo -- <categoria> "Título"   # cria um post a partir de templates/post.md
+```
+
+## Estrutura
+
+- `docs/`: site VitePress. Posts em `docs/artigos/`, `docs/opinioes/`, `docs/noticias/`, `docs/ideias/`. Configuração em `docs/.vitepress/`.
+- `docs/public/imagens/`: imagens dos posts (pasta ainda não criada).
+- `derivados/`: roteiros de podcast e vídeo (veja `derivados/README.md`).
+- `templates/post.md`: modelo de post. `scripts/`: validação e criação de posts.
+
 ## Fluxo
 
 1. Crie uma branch `post/AAAA-MM-DD-slug`.
