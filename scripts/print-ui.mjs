@@ -45,10 +45,12 @@ const page = await browser.newPage({ viewport: { width: largura, height: altura 
 const erros = []
 page.on('pageerror', (e) => erros.push(e.message))
 await page.goto(`http://localhost:${porta}${base}/`, { waitUntil: 'networkidle' })
-await page.waitForLoadState('networkidle')
+// networkidle não basta: apps React Native Web e modais terminam de renderizar e animar depois da rede.
+await page.waitForTimeout(4000)
 if (clicar) {
   await page.getByText(clicar, { exact: true }).first().click()
   await page.waitForLoadState('networkidle')
+  await page.waitForTimeout(1500)
 }
 mkdirSync(dirname(saida), { recursive: true })
 await page.screenshot({ path: saida })
