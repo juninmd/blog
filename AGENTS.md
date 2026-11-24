@@ -9,12 +9,13 @@ npm run dev        # servidor do VitePress (docs/)
 npm run build      # build estático do site
 npm run validar    # confere frontmatter e regras dos posts (scripts/validar-posts.mjs)
 npm run novo -- <categoria> "Título"   # cria um post a partir de templates/post.md
+npm run imagem-commit -- <clone> <sha> <saida.png> [dono/repo] [--sem-corpo]   # cartão PNG de um commit (precisa do Playwright)
 ```
 
 ## Estrutura
 
 - `docs/`: site VitePress. Posts em `docs/artigos/`, `docs/opinioes/`, `docs/noticias/`, `docs/ideias/`. Configuração em `docs/.vitepress/`.
-- `docs/public/imagens/`: imagens dos posts (pasta ainda não criada).
+- `docs/public/imagens/<AAAA-MM-DD-slug>/`: imagens dos posts, uma pasta por post.
 - `derivados/`: roteiros de podcast e vídeo (veja `derivados/README.md`).
 - `templates/post.md`: modelo de post. `scripts/`: validação e criação de posts.
 
@@ -36,5 +37,6 @@ npm run novo -- <categoria> "Título"   # cria um post a partir de templates/pos
 - Frontmatter: `ia: true` e `autoria: ia` em todo post (o `npm run validar` confere).
 - Roteiros de podcast e vídeo começam com o aviso de que foram **roteirizados por IA** (veja `derivados/README.md`).
 - Não invente fatos, números ou citações. Sem fonte, não afirme.
-- Imagens em `docs/public/imagens/` e referenciadas como `/imagens/arquivo.jpg`.
+- Imagens em `docs/public/imagens/<AAAA-MM-DD-slug>/` e referenciadas como `/imagens/<AAAA-MM-DD-slug>/arquivo.png`.
+- **Imagens de commit:** quando o post conta a história de um repositório, ilustre os momentos-chave (2 a 4) com cartões gerados por `npm run imagem-commit` a partir de um clone local, nomeados pelo SHA curto (`4080052.png`). Coloque cada imagem logo depois do parágrafo que cita o commit, com texto alternativo que diga o commit, a data e o que mudou, e mantenha o link do commit em `fontes`. Use `--sem-corpo` em commits de squash cujo corpo é só uma lista de commits. O cartão mostra só o nome do autor, nunca e-mail.
 - Roteiros de podcast e vídeo vão em `derivados/` (veja `derivados/README.md`), no mesmo PR ou em outro.
