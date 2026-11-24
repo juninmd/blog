@@ -10,6 +10,7 @@ autor: Antonio
 fontes:
   - https://github.com/juninmd/fast-news
   - https://github.com/juninmd/fast-news/blob/main/README.md
+  - https://github.com/juninmd/fast-news/commit/38008e5
   - https://github.com/juninmd/fast-news/blob/main/backend/src/database/schema.sql
 derivados:
   podcast:
@@ -23,6 +24,10 @@ derivados:
 Tem uma mudança no **fast-news** que eu acho que ainda não explorei direito. Durante muito tempo, a ingestão descartava notícia parecida: se o embedding de um texto ficava perto demais de outro que já estava no banco, ele era cortado como duplicata. Hoje não é mais assim. Nenhuma notícia é descartada por semelhança. Só sai o que é duplicata **exata** (mesmo `guid`, mesma URL ou mesma URL canônica). O resto é guardado e agrupado numa **história**.
 
 Na prática, quando cinco portais dão o mesmo fato, eu não tenho mais um card e quatro notícias jogadas fora. Tenho uma história com cinco membros, o selo "5 fontes" e o link de cada veículo.
+
+É assim que aparece no feed, no print de evidência que o próprio PR do agrupamento ([#261](https://github.com/juninmd/fast-news/commit/38008e5), 18/10/2026) deixou no repositório, com dados de exemplo:
+
+![Print do feed do fast-news salvo em docs/evidence/news-grouping no commit 38008e5: card "Bitcoin supera US$ 100 mil e bate novo recorde histórico" com o selo "3 fontes" aberto, mostrando as manchetes de Valor Econômico e Reuters lado a lado, e abaixo um card do G1 sobre o Copom com o selo "5 fontes"](/imagens/2026-11-17-quando-a-noticia-vira-historia/ui-38008e5.png)
 
 Eu fiz isso para o leitor não ver a mesma manchete cinco vezes. Mas, relendo o código, percebi que a história é um dado muito mais rico do que um jeito de esconder repetição. Este post é uma lista de ideias do que dá para construir em cima dela. Nenhuma está pronta. É para eu pensar em voz alta e decidir por onde começar.
 
