@@ -12,6 +12,7 @@ fontes:
   - https://github.com/juninmd/evo-agent/blob/main/docs/OPERATIONS.md
   - https://github.com/juninmd/evo-agent/blob/main/docs/adr/0001-guarded-self-improvement.md
   - https://github.com/juninmd/evo-agent/pull/28
+  - https://github.com/juninmd/evo-agent/commit/f26fb08
   - https://github.com/juninmd/evo-agent/pull/52
 derivados:
   podcast:
