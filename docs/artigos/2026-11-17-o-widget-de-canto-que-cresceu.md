@@ -10,7 +10,6 @@ autor: Antonio
 fontes:
   - https://github.com/juninmd/canto-widget
   - https://github.com/juninmd/canto-widget/commit/2d749392
-  - https://github.com/juninmd/canto-widget/commit/2d749392
   - https://github.com/juninmd/canto-widget/commit/39450758
   - https://github.com/juninmd/canto-widget/commit/ac80725f
   - https://github.com/juninmd/canto-widget/commit/80f63a79
