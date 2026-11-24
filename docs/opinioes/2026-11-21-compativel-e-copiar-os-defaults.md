@@ -14,6 +14,7 @@ fontes:
   - https://github.com/juninmd/ultimate-mugen/blob/master/docs/wiki/pt-BR/Decisoes-de-Compatibilidade.md
   - https://github.com/juninmd/ultimate-mugen/commit/6a60c73
   - https://github.com/juninmd/ultimate-mugen/commit/c23ee28
+  - https://github.com/juninmd/ultimate-mugen/commit/178ede85
   - https://github.com/juninmd/ultimate-mugen/commit/0b7767f
   - https://github.com/juninmd/ultimate-mugen/commit/072a3c3
   - https://github.com/juninmd/ultimate-mugen/commit/538029e
@@ -39,6 +40,8 @@ Minha opinião, depois de algumas centenas de PRs nesse repositório: **compatib
 
 O Ultimate MUGEN é um motor de luta 2D que estou escrevendo do zero em Rust. Ele roda personagens e cenários clássicos do M.U.G.E.N, aquele motor dos anos 2000 que virou uma comunidade gigante de gente fazendo lutador de tudo quanto é anime e jogo. Também tem um formato próprio de personagem, em JSON, e um elenco nativo em pixel art. Roda no desktop, no celular e no navegador, com simulação fixa a 60 Hz e determinística, que é a base para replay e netplay com rollback.
 
+![Tela do Ultimate MUGEN salva no repositório (screenshots/13c-community-vs-original.jpg, commit 178ede85, 02/11/2026): Restaze, personagem original da comunidade M.U.G.E.N, levando um chute de Jin Kazaguruma, do elenco nativo, num cenário em preto e branco com barras de vida e tempo 94](/imagens/2026-11-21-compativel-e-copiar-os-defaults/tela-178ede85.jpg)
+
 No README eu listo com orgulho: `.def`, `.sff` v1 e v2, `.air`, `.cmd`, `.cns`, `.snd`, `.act`, cenários, VM de expressões, mais de 90 state controllers. Tudo verdade. E nada disso garante que um personagem da comunidade vai se comportar como se comportava no M.U.G.E.N.
 
 ## O lutador que só andava
@@ -49,6 +52,8 @@ Só que o M.U.G.E.N resolve esse caminho igual a qualquer outro arquivo: pasta d
 
 A correção ([#737](https://github.com/juninmd/ultimate-mugen/commit/6a60c73)) foi pequena: usar a mesma função de resolução de caminho que o resto do loader usa, mantendo a proteção contra `..`. Dezessete linhas mexidas. O difícil não foi corrigir, foi perceber que "importou sem erro" não queria dizer nada.
 
+![Commit 6a60c73 do Ultimate MUGEN, de 20/11/2026: resolve o stcommon na pasta do personagem, na raiz do pacote e em data/](/imagens/2026-11-21-compativel-e-copiar-os-defaults/6a60c73.png)
+
 ## Os defaults são a especificação
 
 O padrão se repete em quase todo `fix(mugen)` dos últimos dias. Alguns exemplos que entraram só entre ontem e hoje:
@@ -58,6 +63,8 @@ O padrão se repete em quase todo `fix(mugen)` dos últimos dias. Alguns exemplo
 - **Duas imunidades ao mesmo tempo** ([#747](https://github.com/juninmd/ultimate-mugen/commit/072a3c3)). `NotHitBy` e `HitBy` têm dois slots independentes, cada um com seu timer. Eu guardava um só, então a segunda imunidade apagava a primeira.
 - **Prioridade de golpe** ([#741](https://github.com/juninmd/ultimate-mugen/commit/538029e)). O `HitDef` aceita `priority = 7, Miss`, mas eu lia só o número e jogava fora a classe. Um agarrão marcado como Miss trocava golpe com um jab, e um Dodge apanhava mesmo assim. Na primeira tentativa de correção eu exagerei e fiz Miss nunca acertar ninguém, o que quebrou um teste de carga: um agarrão Miss ainda tem que pegar o oponente parado. Miss e Dodge só valem quando dois HitDefs se encontram.
 - **`stateowner` apontando para si mesmo** ([#749](https://github.com/juninmd/ultimate-mugen/commit/2f1a668)). Quando um personagem está num estado dado por outro (um agarrão, por exemplo), `stateowner` tem que ler as variáveis de quem deu o estado. Eu devolvia o próprio lutador. Uma linha.
+
+![Commit c23ee28, de 21/11/2026: guard.slidetime e guard.ctrltime assumem o valor de guard.hittime quando não são informados, como no M.U.G.E.N](/imagens/2026-11-21-compativel-e-copiar-os-defaults/c23ee28.png)
 
 Nenhum desses bugs aparece lendo a documentação do formato com pressa. Eles aparecem quando você carrega personagem real, feito por gente real, que confiou no comportamento do motor antigo sem saber que estava confiando.
 
