@@ -10,6 +10,7 @@ autor: Antonio
 fontes:
   - https://github.com/juninmd/canto-widget
   - https://github.com/juninmd/canto-widget/commit/2d749392
+  - https://github.com/juninmd/canto-widget/commit/39450758
   - https://github.com/juninmd/canto-widget/commit/ac80725f
   - https://github.com/juninmd/canto-widget/commit/80f63a79
   - https://github.com/juninmd/canto-widget/commit/69a48855
@@ -72,6 +73,14 @@ Agora a parte honesta. Olhando o [CHANGELOG](https://github.com/juninmd/canto-wi
 Parte disso veio de um jeito específico de trabalhar: mais de 300 dos 474 commits citam o Claude, como autor ou coautor. Com um agente que implementa rápido, o custo de "e se tivesse também..." cai quase a zero. O custo de manter não cai.
 
 Eu tomei duas providências para isso não virar bagunça. A primeira: quase toda aba nova nasce **desligada**, a um checkbox de distância nos Ajustes. Steam, clima, trânsito, RSS, contatos, agentes. Quem instala o Canto vê o widget de tarefas e agenda que eu tinha imaginado em setembro. A segunda: cada feature vive na sua pasta, e o CI roda lint, testes, e2e, clippy e `cargo test` em três sistemas operacionais em todo PR. O repositório tem um `AGENTS.md` dizendo exatamente isso para qualquer agente que for mexer nele.
+
+Dá para ver as duas coisas rodando a interface de cada commit no Chromium, com o mock do Tauri que o próprio repositório usa nos testes e2e (sem nenhum dado meu). No primeiro commit ([2d749392](https://github.com/juninmd/canto-widget/commit/2d749392), 09/09/2026), as seis abas ficavam todas à vista:
+
+![Print da interface do Canto no primeiro commit, 2d749392: janela escura com as abas Tarefas, Notas, Clipboard, Reunioes, Agenda e Sync, campo "nova tarefa de hoje" e o texto "nada para hoje ainda"](/imagens/2026-11-17-o-widget-de-canto-que-cresceu/ui-2d749392.png)
+
+Hoje (commit 39450758, 24/11/2026), quem abre pela primeira vez vê cinco abas e um menu "mais". O resto fica desligado até alguém ligar nos Ajustes:
+
+![Print da interface atual do Canto, commit 39450758: abas Tarefas, Notas, Clipboard, Agenda e GitHub, menu "mais" aberto com Modelos IA e Ajustes, campo de nova tarefa com atalhos de hora e prioridade e filtros Todas, Alta, Média e Baixa](/imagens/2026-11-17-o-widget-de-canto-que-cresceu/ui-39450758.png)
 
 Ainda assim, uma aba de Steam num app de produtividade é difícil de defender. Eu uso? Uso. Ela devia estar ali? Não sei.
 

@@ -41,11 +41,17 @@ Só que um cofre bem trancado não adianta nada se a porta da frente é a extens
 
 Em 19 de setembro eu juntei duas coisas no mesmo dia. Primeiro, um PR de [substituição do LastPass](https://github.com/juninmd/bunker/pull/120), com códigos TOTP, importação fiel do CSV e uma homologação de ponta a ponta: um script que abre a extensão de verdade no Chromium, cria o cofre, importa o CSV, preenche login, testa PIN, bloqueio automático, e tira os prints que hoje estão no README.
 
+Um desses prints, gerado pelo próprio teste no commit [452629d](https://github.com/juninmd/bunker/commit/452629d) com dados de exemplo:
+
+![Print da extensão Bunker no Chromium, tirado pela homologação do commit 452629d (19/09/2026): lista do cofre com busca, filtros por pasta e itens de exemplo como Nubank com código TOTP, Wi-Fi de casa como nota segura, Google, Netflix, X e Acme, e a barra inferior com Cofre, Gerador, Saúde e Ajustes](/imagens/2026-11-18-ataquei-meu-proprio-cofre-de-senhas/ui-452629d.png)
+
 Depois, o PR que é o assunto deste texto: a [homologação de segurança](https://github.com/juninmd/bunker/pull/121). A mensagem do commit que criou o teste resume a ideia melhor do que eu faria agora:
 
 > Reading code cannot prove a defence holds in Chrome.
 
 Ler código não prova que uma defesa aguenta dentro do Chrome. Então eu (com o Claude como coautor desse commit, como de quase tudo nesse repositório) escrevi um [`security-probe`](https://github.com/juninmd/bunker/commit/ee8da061) que carrega a extensão compilada e **ataca**. Ele faz o papel de dois inimigos:
+
+![Commit ee8da06 do Bunker, de 19/09/2026: o security-probe que carrega a extensão compilada e a ataca como página hostil e como ladrão de disco](/imagens/2026-11-18-ataquei-meu-proprio-cofre-de-senhas/ee8da06.png)
 
 - **Uma página hostil**, ou um site legítimo com XSS: dispara cliques sintéticos, tenta clickjacking escondendo o ícone com opacidade, `clip-path` e escala, manda mensagem direto para a extensão, abre outra origem.
 - **Um ladrão de disco**: fecha o navegador, copia o perfil do Chrome e procura segredo em texto puro, byte a byte, em UTF-8 e UTF-16.

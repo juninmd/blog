@@ -43,6 +43,14 @@ Isso não estava num lugar só. Estava em três modos de jogo diferentes: `zp50_
 
 A resposta que eu dei foi escrever a regra `tr2_missing_byref` no **zplint**. Ela marca como **erro** qualquer `get_tr2` com membro float ou vetor chamado com dois argumentos. Não tem uso legítimo dessa forma, então não faz sentido ser só um aviso. O teste cobre a forma errada, a forma certa com três argumentos e os membros inteiros como `TR_StartSolid`, que retornam por valor e não podem ser marcados.
 
+Compilei o zplint no commit anterior e no commit da regra e rodei os dois num plugin de teste de nove linhas com o erro exato, `if (get_tr2(trace, TR_flFraction) < 1.0)`. O de antes deixa passar:
+
+![Terminal rodando o zplint no commit 55f1d5e sobre modo.sma: a saída é "No issues" e o código de saída é 0](/imagens/2026-11-19-um-crash-no-servidor-virou-um-linter/term-55f1d5e.png)
+
+O da regra para tudo, com a explicação do crash e o jeito certo de chamar:
+
+![Terminal rodando o zplint no commit d7a4df3 sobre o mesmo arquivo: erro tr2_missing_byref na linha 6, explicando que o fakemeta lê params[3] sem checar e sugerindo get_tr2(h, TR_flFraction, v), com código de saída 1](/imagens/2026-11-19-um-crash-no-servidor-virou-um-linter/term-d7a4df3.png)
+
 Essa é a parte que eu mais gosto do projeto: cada crash que eu tomo vira uma linha de defesa permanente. O servidor quebrou uma vez por esse motivo; o linter garante que não quebra de novo pelo mesmo motivo.
 
 ## De onde o zplint veio

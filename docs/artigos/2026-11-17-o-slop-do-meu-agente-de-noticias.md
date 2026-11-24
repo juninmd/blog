@@ -11,6 +11,7 @@ autor: Antonio
 fontes:
   - https://github.com/juninmd/evo-agent/blob/main/docs/EDITORIAL-REVIEW.md
   - https://github.com/juninmd/evo-agent/pull/58
+  - https://github.com/juninmd/evo-agent/blob/gh-pages/articles/2026-11-03-anthropic-revela-compromisso-de-900-bilhoes-de-dolares-e-claude-code-expoe-senha.md
   - https://github.com/juninmd/evo-agent/pull/51
   - https://github.com/juninmd/evo-agent/pull/53
   - https://github.com/juninmd/evo-agent/pull/55
@@ -41,6 +42,10 @@ Vale contar os achados, porque acho que eles valem para qualquer pessoa que este
 Este foi o pior. Na edição de 3/11, o título falava em "900 bilhões de dólares" e o resumo em senhas vazando no processo do zsh. Nenhuma das duas coisas aparecia no corpo do texto. Em 4 das 31 edições, mais de 45% das palavras do título e do resumo não tinham lastro no corpo.
 
 Isso não é estilo ruim. É desinformação com a minha assinatura.
+
+Esta é a edição como ela foi publicada no site, renderizada a partir do branch `gh-pages` do evo-agent (commit 3f7d15c, 03/11/2026). O título e o resumo prometem o que o corpo não entrega:
+
+![Topo da edição de 03/11/2026 do Evo Agent, renderizada do branch gh-pages no commit 3f7d15c: título "Anthropic revela compromisso de 900 bilhões de dólares e Claude Code expõe senhas no shell" e resumo sobre senhas visíveis no processo zsh, 10 minutos de leitura](/imagens/2026-11-17-o-slop-do-meu-agente-de-noticias/tela-3f7d15c.png)
 
 ### 2. Fonte e texto desencontrados
 
@@ -76,6 +81,8 @@ Então o pipeline ganhou travas:
 - **Utilidade de 1 a 5.** O modelo dá uma nota de utilidade para cada pauta. As abaixo de 3 saem, mas só se o que sobrar ainda cumprir todas as cotas.
 - **"Por que importa" genérico é rejeitado.** Frase do tipo "devem revisar" sem número nem detalhe concreto volta para o modelo com feedback.
 - **O fechamento abre com uma tese.** E ignora as pautas que não a sustentam.
+
+![Commit b9b0091 do evo-agent, de 03/11/2026 (PR #58): corta o slop editorial, fundamenta título e resumo no corpo, poda itens de pouca utilidade e evita repetições](/imagens/2026-11-17-o-slop-do-meu-agente-de-noticias/b9b0091.png)
 
 ## O problema da repetição é mais difícil do que parece
 

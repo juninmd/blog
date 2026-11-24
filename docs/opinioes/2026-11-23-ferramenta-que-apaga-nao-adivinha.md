@@ -44,11 +44,21 @@ Por muito tempo eu achei que era isso: um script pequeno, com um truque esperto 
 
 **O chute do symlink.** O deleter usava `statSync`, que segue links simbólicos. Se dentro da pasta tivesse um link para outro diretório, o Hakai tratava o link como pasta de verdade, renomeava e apagava o conteúdo do alvo. Ou seja: você pedia para apagar uma pasta e ele apagava coisas fora dela. A correção ([77271b8](https://github.com/juninmd/Hakai/commit/77271b8)) foi trocar por `lstatSync`, que remove só o link. Uma letra de diferença no nome da função, uma categoria inteira de desastre a menos.
 
+![Commit 77271b8 do Hakai, de 19/11/2026: o deleter deixa de seguir links simbólicos ao apagar](/imagens/2026-11-23-ferramenta-que-apaga-nao-adivinha/77271b8.png)
+
 **O chute do nome livre.** Os caminhos curtos eram só a raiz mais um contador. O código assumia que `alvo1` não existia. Se existisse uma pasta irmã com esse nome, o rename falhava ou, pior, substituía em silêncio um diretório vazio, deixando a árvore meio apagada. A correção ([a5872ef](https://github.com/juninmd/Hakai/commit/a5872ef)) passou a procurar um nome realmente livre antes de renomear. O mesmo commit tratou a barra no final do caminho, que fazia as pastas encurtadas irem parar dentro da própria raiz.
 
 **O chute do "não existe".** Para checar se o alvo existia, o CLI usava `fs.existsSync`, que também segue symlinks. Um link quebrado era reportado como caminho inexistente e nunca podia ser removido ([52f3ed7](https://github.com/juninmd/Hakai/commit/52f3ed7)). Esse é o erro oposto: não apagar o que você pediu. Menos perigoso, mas é a mesma raiz. O código deduzia em vez de olhar para a entrada real.
 
 **O chute dos argumentos.** Esse é o meu favorito, porque o README sempre avisou: "não se esqueça das aspas". Um caminho com espaço, sem aspas, chega no programa como vários argumentos. O Hakai pegava só o primeiro e apagava esse, sem avisar nada. `hakai D:\Meus Projetos` virava, na prática, um pedido para apagar `D:\Meus`. A correção mais recente ([359e149](https://github.com/juninmd/Hakai/commit/359e149)) faz o contrário: argumento sobrando é erro, sai com código 2 e nada é apagado. O comentário no código diz exatamente o motivo: apagar só o primeiro pedaço seria perda de dados silenciosa.
+
+Rodei as duas versões num diretório de teste com uma pasta `minha` e outra `minha pasta`, digitando o caminho sem aspas. Antes, no commit 4ae19fc, o Hakai apagou a pasta errada e ainda saiu com código 0:
+
+![Terminal rodando o Hakai no commit 4ae19fc: o comando "hakai minha pasta" sem aspas imprime "Exclusão concluída: minha", sai com código 0, e o ls seguinte mostra que a pasta "minha" sumiu](/imagens/2026-11-23-ferramenta-que-apaga-nao-adivinha/term-4ae19fc.png)
+
+Depois, no commit 359e149, o mesmo comando vira erro e as duas pastas continuam lá:
+
+![Terminal rodando o Hakai no commit 359e149: o mesmo comando imprime "Argumentos demais (2). Se o caminho tem espacos, use aspas", sai com código 2, e o ls mostra as duas pastas intactas](/imagens/2026-11-23-ferramenta-que-apaga-nao-adivinha/term-359e149.png)
 
 ## Quando dá errado, deixe as coisas onde estavam
 

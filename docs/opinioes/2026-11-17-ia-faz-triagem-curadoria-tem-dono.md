@@ -10,6 +10,7 @@ autor: Antonio
 fontes:
   - https://github.com/juninmd/fast-news
   - https://github.com/juninmd/fast-news/blob/main/AGENTS.md
+  - https://github.com/juninmd/fast-news/commit/f77fad9
   - https://github.com/juninmd/evo-agent
   - https://github.com/juninmd/blog/blob/main/AGENTS.md
 derivados:
@@ -30,6 +31,10 @@ Não porque o sistema funcione mal. Ele funciona. O que está errado é a palavr
 ## O que os agentes fazem de verdade
 
 O fast-news publica o boletim **O Fio** quatro vezes por dia: manhã, meio-dia, tarde e noite. Cada edição cobre uma janela de horas, junta as notícias de vários feeds, agrupa a mesma história publicada por veículos diferentes, traduz títulos em inglês e manda um resumo pelo Telegram com o link para o jornal completo. Desde 3 de outubro, o repositório já acumulou 152 edições.
+
+O print de evidência que ficou no repositório com a correção de cobertura das edições ([f77fad9](https://github.com/juninmd/fast-news/commit/f77fad9), 30/09/2026), numa edição sintética de teste, mostra bem a esteira: 1.200 notícias coletadas de 20 fontes, 240 enviadas à IA, o resto vira matéria complementar.
+
+![Print de O Fio salvo em docs/evidence/edition-full-coverage no commit f77fad9: edição sintética da noite de 30/09/2026 com "1.200 notícias coletadas de 20 fontes", período das 09h00 às 20h00, aviso "1.200 notícias representadas; 240 enviadas à IA" e manchetes de teste](/imagens/2026-11-17-ia-faz-triagem-curadoria-tem-dono/tela-f77fad9.png)
 
 O evo-agent vai além. Ele coleta de RSS, Google News, Hacker News, TabNews, GitHub Trending, Reddit e das release notes dos coding agents. Dá nota para cada item por recência, engajamento, autoridade da fonte, diversidade e evidência entre fontes. Escolhe as pautas, escreve três edições longas por dia e ainda reescreve o próprio prompt a partir do que leu, com versionamento e rollback.
 

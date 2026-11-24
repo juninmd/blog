@@ -44,6 +44,14 @@ Resultado: rodando com uma ServiceAccount sem `list events` ou sem `get pods/log
 
 A correção, no PR #35, foi trocar o `null` silencioso por uma função que devolve o motivo da falha (`kubectlTry`), marcar no snapshot quando a falha é de acesso ou de conectividade e transformar isso num aviso próprio, `data-unavailable`: "Diagnóstico incompleto: o kubectl não leu eventos ou logs". O aviso já sugere o próximo passo, que é conferir `kubectl auth can-i get events` e `kubectl auth can-i get pods/log`.
 
+Dá para ver a diferença rodando as duas versões contra o mesmo pod. Usei o `real-running.json` dos fixtures do repositório e um `kubectl` falso que responde `Forbidden` para eventos e logs, do mesmo jeito que o teste do #35 simula uma ServiceAccount sem permissão. Antes da correção, o veredito era um check verde:
+
+![Terminal rodando o why-is-my-pod-sad no commit 92dfd58, com o kubectl negando acesso a eventos e logs: a saída diz "Este pod não está triste" e o código de saída é 0](/imagens/2026-11-22-silencio-nao-e-saude/term-92dfd58.png)
+
+Depois do #35, o mesmo cenário vira aviso, com o erro de RBAC na tela e código de saída 1:
+
+![Terminal rodando o why-is-my-pod-sad no commit 0b30a68 no mesmo cenário: "Diagnóstico incompleto: o kubectl não leu eventos ou logs", com as mensagens Forbidden de eventos e de pods/log e a sugestão de conferir kubectl auth can-i](/imagens/2026-11-22-silencio-nao-e-saude/term-0b30a68.png)
+
 E o caso legítimo continua legítimo: o log anterior ausente de um container que nunca reiniciou segue sem alarme. A diferença é que agora a ferramenta sabe *por que* não tem dado, em vez de tratar toda ausência igual.
 
 ## Não foi um bug isolado
