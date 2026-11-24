@@ -80,6 +80,10 @@ Isso parece burocracia até o dia em que um agente publica algo errado com o seu
 
 Tudo isso converge num contrato de saúde. `npm run health` emite um JSON e sai com código diferente de zero quando o sistema está degradado ou crítico. Crítico é nenhum ciclo bem-sucedido em 24 horas, qualquer notificação em dead-letter ou um ciclo marcado como rodando há mais de seis horas. Ao subir, o processo marca esses ciclos abandonados como falhos, para um restart de pod não esconder trabalho velho como "ainda em andamento".
 
+Rodando contra um banco vazio, num clone limpo do commit f26fb08 (24/11/2026), dá para ver o contrato funcionando: sem nenhum ciclo nem artigo, o status é `critical`, com os motivos listados, e o processo sai com código 1:
+
+![Terminal rodando npm run health do evo-agent no commit f26fb08 com um SQLite vazio: JSON com status "critical", motivos "no successful cycle in 24h", "no articles collected in 48h" e "no recent primary sources", contadores zerados e código de saída 1](/imagens/2026-11-17-operar-agente-que-roda-sozinho/term-f26fb08.png)
+
 ## O que fica
 
 Quando comecei, eu achava que o difícil de um agente de notícias era o prompt. Não é. O prompt é a parte que mais muda e a que mais tem ferramenta pronta. O difícil é o mesmo de sempre: escrita em dois sistemas, fila que falha, job que estoura prazo, dado que precisa ser corrigido sem apagar a história.
