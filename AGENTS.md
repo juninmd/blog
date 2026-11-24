@@ -21,10 +21,11 @@ npm run imagem-commit -- <clone> <sha> <saida.png> [dono/repo] [--sem-corpo]   #
 
 ## Fluxo
 
+0. Para ler os repositórios públicos do Antonio (fonte de temas e de imagens de commit), use `git clone https://github.com/juninmd/<repo>`: a API do GitHub pode recusar repositórios fora do escopo da sessão.
 1. Crie uma branch `post/AAAA-MM-DD-slug`.
 2. Gere o arquivo com `npm run novo -- <categoria> "Título"` ou copie `templates/post.md` para `docs/<categoria>/AAAA-MM-DD-slug.md`.
 3. Escreva o texto, preencha o frontmatter e rode `npm run validar`.
-4. Abra um PR para `main` preenchendo o modelo. **Um post por PR.**
+4. Abra um PR para `main` preenchendo o modelo, com uma seção **Evidências** (saída de `npm run validar` e `npm run build`). **Um post por PR.** Pode adicionar `juninmd` como assignee, mas não peça review dele: ele é o autor do PR e o GitHub recusa.
 5. Ajuste conforme os comentários. Nunca faça merge você mesmo.
 
 ## Regras
