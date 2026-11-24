@@ -44,11 +44,11 @@ const browser = await pw.chromium.launch()
 const page = await browser.newPage({ viewport: { width: largura, height: altura }, deviceScaleFactor: 2 })
 const erros = []
 page.on('pageerror', (e) => erros.push(e.message))
-await page.goto(`http://localhost:${porta}${base}/`)
-await page.waitForTimeout(6000)
+await page.goto(`http://localhost:${porta}${base}/`, { waitUntil: 'networkidle' })
+await page.waitForLoadState('networkidle')
 if (clicar) {
   await page.getByText(clicar, { exact: true }).first().click()
-  await page.waitForTimeout(1500)
+  await page.waitForLoadState('networkidle')
 }
 mkdirSync(dirname(saida), { recursive: true })
 await page.screenshot({ path: saida })
