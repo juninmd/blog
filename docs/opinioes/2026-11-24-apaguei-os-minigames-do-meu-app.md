@@ -19,6 +19,7 @@ fontes:
   - https://github.com/juninmd/etanol-gasolina/commit/31a5574
   - https://github.com/juninmd/etanol-gasolina/commit/c1fc7be
   - https://github.com/juninmd/etanol-gasolina/commit/7c3467d
+  - https://github.com/juninmd/etanol-gasolina/commit/a14efe1
   - https://github.com/juninmd/etanol-gasolina/commit/2a47ea7
   - https://github.com/juninmd/etanol-gasolina/blob/master/AGENTS.md
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
@@ -45,6 +46,12 @@ A lista de features que entraram nesse período parece cardápio de parque de di
 
 Cada um desses PRs, isolado, fazia sentido. Tinha descrição, tinha componente, integrava na home nativa e na home web. Alguns até corrigiam lint de passagem. Se eu avaliasse PR por PR, aprovaria quase todos. Esse é o problema: ninguém estava avaliando o app, só os PRs.
 
+Foi assim que a home ficou no último commit de feature antes da reescrita ([2a47ea7](https://github.com/juninmd/etanol-gasolina/commit/2a47ea7), 11/10/2026). Os dois campos de preço, que eram o app, estão espremidos entre um bichinho virtual com fome e uma coluna de botões de minigame:
+
+![Print da versão web do etanol-gasolina no commit 2a47ea7: cabeçalho "Calculadora Etanol vs Gasolina", card do Caragotchi triste, botões Me Surpreenda e Posto Tycoon, os campos de preço e uma coluna de catorze botões de minigames, de Calculadora de Rolê a Churrascómetro](/imagens/2026-11-24-apaguei-os-minigames-do-meu-app/ui-2a47ea7.png)
+
+Para tirar esse print precisei de dois remendos: a versão web quebrava na abertura com `CalculadoraDeRoleModal is not defined`, porque o modal era usado sem ser importado, e depois disso abria já com o modal da Calculadora de Rolê na frente de tudo. O mesmo PR que refez o app registra as duas correções.
+
 ## O dia em que olhei o app inteiro
 
 No fim de outubro sentei para gerar um build Android de verdade. O que eu encontrei está registrado no PR [#83](https://github.com/juninmd/etanol-gasolina/commit/4080052), e não é bonito:
@@ -63,6 +70,8 @@ Primeiro consertei o que dava para consertar, porque eu queria saber se o caminh
 ## O que ficou
 
 Ficou uma tela. Você escolhe estado e cidade, os campos vêm preenchidos com a média de revenda da semana publicada pela ANP, e o app diz qual combustível compensa. Se você informar o consumo do carro nos dois combustíveis, ele troca a regra dos 70% pelo custo por quilômetro. Embaixo, até dez postos da cidade, ordenados pelo custo efetivo.
+
+![Print da versão web atual do etanol-gasolina (commit a14efe1, 23/11/2026): título "Etanol ou gasolina?", seletores de estado e cidade, preços médios da ANP preenchidos (gasolina 6,47 e etanol 4,29), campos opcionais de consumo e um cartão verde "Abasteça com etanol", com a semana da ANP no rodapé](/imagens/2026-11-24-apaguei-os-minigames-do-meu-app/ui-a14efe1.png)
 
 O trabalho que importava foi para os dados, não para a tela. Um script baixa as planilhas semanais da ANP, converte estados, regiões, municípios e postos em JSON e grava um histórico semanal em SQLite ([#86](https://github.com/juninmd/etanol-gasolina/commit/c1fc7be)). Um workflow roda todo dia e só commita quando a ANP publicou algo novo. A lista de municípios vem do IBGE, todas as 5.571 cidades, e quando a ANP não pesquisou a sua na semana o app usa a cidade pesquisada mais próxima do mesmo estado, até 150 km, e avisa na tela que aquilo é estimativa.
 

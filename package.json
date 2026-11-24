@@ -8,7 +8,8 @@
     "preview": "vitepress preview docs",
     "validar": "node scripts/validar-posts.mjs",
     "novo": "node scripts/novo-post.mjs",
-    "imagem-commit": "node scripts/imagem-commit.mjs"
+    "imagem-commit": "node scripts/imagem-commit.mjs",
+    "print-ui": "node scripts/print-ui.mjs"
   },
   "devDependencies": {
     "gray-matter": "4.0.3",

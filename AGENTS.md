@@ -10,6 +10,7 @@ npm run build      # build estático do site
 npm run validar    # confere frontmatter e regras dos posts (scripts/validar-posts.mjs)
 npm run novo -- <categoria> "Título"   # cria um post a partir de templates/post.md
 npm run imagem-commit -- <clone> <sha> <saida.png> [dono/repo] [--sem-corpo]   # cartão PNG de um commit (precisa do Playwright)
+npm run print-ui -- <pasta-do-build> <saida.png> [--base /prefixo] [--clicar "Texto"] [--altura N]   # print da UI de um build web estático
 ```
 
 ## Estrutura
@@ -40,4 +41,5 @@ npm run imagem-commit -- <clone> <sha> <saida.png> [dono/repo] [--sem-corpo]   #
 - Não invente fatos, números ou citações. Sem fonte, não afirme.
 - Imagens em `docs/public/imagens/<AAAA-MM-DD-slug>/` e referenciadas como `/imagens/<AAAA-MM-DD-slug>/arquivo.png`.
 - **Imagens de commit:** quando o post conta a história de um repositório, ilustre os momentos-chave (2 a 4) com cartões gerados por `npm run imagem-commit` a partir de um clone local, nomeados pelo SHA curto (`4080052.png`). Coloque cada imagem logo depois do parágrafo que cita o commit, com texto alternativo que diga o commit, a data e o que mudou, e mantenha o link do commit em `fontes`. Use `--sem-corpo` em commits de squash cujo corpo é só uma lista de commits. O cartão mostra só o nome do autor, nunca e-mail.
+- **Prints da UI em cada momento (obrigatório quando o projeto tem interface):** se o post fala de como um app era e como ficou, mostre a UI real nesses commits, não só o cartão. Receita: `git -C <clone> worktree add --detach ../app-<sha> <sha>`, instale as dependências com o gerenciador do lockfile daquele commit, gere o build web (ex.: `npx expo export -p web`, `npm run build`) e rode `npm run print-ui` na pasta gerada. Nomeie como `ui-<sha-curto>.png` (o tema estreita e centraliza esses arquivos como tela de celular). Se o build daquele commit quebrar, o erro é parte da história: conte no texto, e se precisar de um remendo mínimo para renderizar, diga qual foi. Quando não houver UI web (CLI, lib, mod), use print do terminal ou o cartão de commit. Nunca use imagem que não saiu do próprio repositório.
 - Roteiros de podcast e vídeo vão em `derivados/` (veja `derivados/README.md`), no mesmo PR ou em outro.

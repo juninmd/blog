@@ -49,3 +49,5 @@ body { background: var(--sd-ink); color: var(--sd-paper); }
 }
 .aviso-ia strong { color: var(--vp-c-text-1); }
 .aviso-ia a { margin-left: 4px; white-space: nowrap; color: var(--vp-c-brand-1); text-decoration: underline; }
+/* Prints de UI de celular (arquivos ui-*.png) ficam estreitos e centralizados, como uma tela de verdade. */
+.vp-doc img[src*="/ui-"] { display: block; max-width: min(100%, 340px); margin: 12px auto; border: 1px solid var(--sd-line); border-radius: 18px; }
