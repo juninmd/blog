@@ -54,7 +54,11 @@ ${linhasCorpo.length ? `<div class="corpo">${esc(linhasCorpo.join('\n'))}</div>`
 <div class="arqs">${top.map((a) => `<span class="n">${esc(a.nome)}</span><span class="c"><span class="mais">+${num(a.mais)}</span> <span class="menos">−${num(a.menos)}</span></span><span class="barra"><i style="width:${(a.mais / maior) * 100}%;background:#5bd38a"></i><i style="width:${(a.menos / maior) * 100}%;background:#ff6b6b"></i></span>`).join('')}</div>
 <div class="rodape"><span>${esc(autor)}</span><span>${num(arquivos.length)} arquivo(s) · <span class="mais">+${num(totalMais)}</span> <span class="menos">−${num(totalMenos)}</span></span></div>`
 
-const { chromium } = createRequire(import.meta.url)('playwright')
+// Usa o Playwright do projeto ou, se não houver, o instalado globalmente.
+const carregar = (base) => createRequire(base)('playwright')
+let pw
+try { pw = carregar(import.meta.url) } catch { pw = carregar(`${execFileSync('npm', ['root', '-g'], { encoding: 'utf8' }).trim()}/`) }
+const { chromium } = pw
 const browser = await chromium.launch()
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } })
 await page.setContent(html)
