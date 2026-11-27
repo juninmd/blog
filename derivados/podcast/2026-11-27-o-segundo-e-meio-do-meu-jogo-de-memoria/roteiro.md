@@ -24,4 +24,4 @@ Mais dois bugs de tempo: o fim do tempo usava um callback velho e salvava placar
 
 ## Fechamento (4:15–5:00)
 
-Nenhum desses era erro de regra do jogo. Era estado mentindo e timer sem dono. Se existe uma fase entre rodadas, ela merece nome na máquina de estados.
+Nenhum desses era erro de regra do jogo. Era estado mentindo e timer sem dono. Se existe uma fase entre rodadas, ela merece nome na máquina de estados: sem nome explícito, estados como WAITING_FOR_INPUT são usados erroneamente, gerando bugs de lógica.
